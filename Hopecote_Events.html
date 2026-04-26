@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farm Events & Weddings — Hopecote Farm, Springfield TN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:      #12281D;
+      --green-mid:  #1E3528;
+      --green-pale: #E5EDEA;
+      --gold:       #EFE4AE;
+      --gold-dark:  #C9B86C;
+      --sage:       #4F5A51;
+      --cream:      #F9F6F2;
+      --text:       #12281D;
+      --muted:      #526158;
+      --border:     #D2DBD6;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--sage); padding: 14px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-brand { color: var(--gold); font-size: 1.1rem; font-weight: 700; letter-spacing: .06em; text-decoration: none; font-family: 'Manrope', sans-serif; }
+    .nav-brand span { color: #fff; font-weight: 400; }
+    .nav-cta { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); padding: 8px 22px; border-radius: 4px; text-decoration: none; font-size: .88rem; font-weight: 600; transition: background .2s, color .2s; font-family: 'Manrope', sans-serif; letter-spacing: .04em; }
+    .nav-cta:hover { background: var(--gold); color: var(--green); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(155deg, rgba(18,40,29,0.82) 0%, rgba(18,40,29,0.65) 55%, rgba(30,53,40,0.50) 100%),
+                  url('images/green_meadow.jpg') center center / cover no-repeat;
+      color: #fff; text-align: center; padding: 100px 24px 110px; position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 60px;
+      background: var(--cream); clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-badge {
+      display: inline-block; color: var(--gold); border: 1.5px solid var(--gold);
+      padding: 5px 18px; border-radius: 30px; font-size: .8rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase; margin-bottom: 22px; font-family: 'Manrope', sans-serif;
+    }
+    .hero h1 {
+      font-family: 'Manrope', sans-serif; font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800; line-height: 1.15; margin-bottom: 20px; max-width: 720px; margin-inline: auto;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,.85); max-width: 560px; margin: 0 auto 12px; }
+    .hero-details { font-size: .9rem; color: var(--gold); letter-spacing: .04em; margin-bottom: 36px; font-family: 'Manrope', sans-serif; font-weight: 600; }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-gold { background: var(--gold); color: var(--green); padding: 14px 34px; border-radius: 5px; text-decoration: none; font-weight: 700; font-size: .95rem; font-family: 'Manrope', sans-serif; letter-spacing: .03em; transition: background .2s; }
+    .btn-gold:hover { background: var(--gold-dark); }
+    .btn-ghost { border: 1.5px solid rgba(255,255,255,.5); color: #fff; padding: 14px 34px; border-radius: 5px; text-decoration: none; font-weight: 600; font-size: .95rem; font-family: 'Manrope', sans-serif; transition: border-color .2s; }
+    .btn-ghost:hover { border-color: #fff; }
+
+    /* ── PROMISE BAR ── */
+    .promise-bar {
+      background: var(--green); padding: 18px 40px;
+      display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
+    }
+    .promise-item { display: flex; align-items: center; gap: 10px; color: var(--gold); font-size: .88rem; font-family: 'Manrope', sans-serif; font-weight: 600; letter-spacing: .04em; }
+    .promise-icon { font-size: 1.1rem; }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 24px; }
+    .container { max-width: 960px; margin: 0 auto; }
+    .eyebrow { font-family: 'Manrope', sans-serif; font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 12px; }
+    .headline { font-family: 'Manrope', sans-serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 800; color: var(--green); line-height: 1.2; margin-bottom: 18px; }
+    .section-intro { color: var(--muted); font-size: 1.02rem; max-width: 620px; margin-bottom: 52px; line-height: 1.75; }
+
+    /* ── EVENT TYPES ── */
+    .events-statement {
+      text-align: center; margin-bottom: 56px;
+    }
+    .events-statement .eyebrow { display: block; margin-bottom: 14px; }
+    .events-statement-title {
+      font-family: 'Manrope', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800; color: var(--green); line-height: 1.2; margin-bottom: 10px;
+    }
+    .events-statement-title em { color: var(--gold-dark); font-style: italic; }
+    .events-divider {
+      display: flex; align-items: center; gap: 16px; justify-content: center; margin: 18px 0 22px;
+    }
+    .events-divider span { height: 1.5px; width: 60px; background: var(--gold-dark); display: block; }
+    .events-statement p { color: var(--muted); font-size: 1rem; max-width: 560px; margin: 0 auto; line-height: 1.75; }
+
+    .event-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px; }
+    @media(max-width: 840px) { .event-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(max-width: 520px) { .event-grid { grid-template-columns: 1fr; } }
+    .event-card {
+      position: relative; border-radius: 14px; overflow: hidden;
+      aspect-ratio: 4/3; cursor: default;
+      box-shadow: 0 4px 20px rgba(18,40,29,.15);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .event-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(18,40,29,.22); }
+    .event-card-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      transition: transform .5s;
+    }
+    .event-card:hover .event-card-img { transform: scale(1.05); }
+    .event-card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(18,40,29,.92) 0%, rgba(18,40,29,.45) 55%, rgba(18,40,29,.15) 100%);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 24px 22px;
+    }
+    .event-card-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .event-card h4 { font-family: 'Manrope', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+    .event-card p { color: rgba(255,255,255,.8); font-size: .83rem; line-height: 1.55; }
+
+    /* ── WHAT'S INCLUDED ── */
+    .included-section { background: var(--green); }
+    .included-section .eyebrow { color: var(--gold-dark); }
+    .included-section .headline { color: var(--gold); }
+    .included-section .section-intro { color: rgba(255,255,255,.75); }
+    .included-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    @media(max-width: 640px) { .included-grid { grid-template-columns: 1fr; } }
+    .included-item {
+      display: flex; gap: 18px; align-items: flex-start;
+      background: rgba(255,255,255,.06); border-radius: 10px; padding: 24px 22px;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .ii-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+    .ii-text h5 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: .98rem; color: var(--gold); margin-bottom: 5px; }
+    .ii-text p { font-size: .88rem; color: rgba(255,255,255,.72); line-height: 1.6; }
+
+    /* ── VENUE ── */
+    .venue-section { background: #fff; }
+    .venue-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    @media(max-width: 720px) { .venue-two-col { grid-template-columns: 1fr; } }
+    .venue-img {
+      border-radius: 14px; overflow: hidden; aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--green-pale), var(--green));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .venue-img-placeholder { font-size: 4rem; opacity: .35; }
+    .venue-details { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+    .venue-detail { display: flex; gap: 14px; align-items: flex-start; }
+    .vd-icon { width: 40px; height: 40px; background: var(--green-pale); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .vd-text h6 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: .92rem; color: var(--green); margin-bottom: 2px; }
+    .vd-text p { font-size: .87rem; color: var(--muted); line-height: 1.55; }
+
+    /* ── PRICING ── */
+    .pricing-section { background: var(--cream); }
+    .pricing-note { background: var(--green-pale); border-left: 4px solid var(--green); padding: 18px 22px; border-radius: 6px; font-size: .9rem; color: var(--green); margin-bottom: 36px; line-height: 1.65; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 28px; }
+    @media(max-width: 720px) { .pricing-grid { grid-template-columns: 1fr; } }
+    .price-card { background: #fff; border: 1.5px solid var(--border); border-radius: 14px; padding: 34px 28px; }
+    .price-card.featured { background: var(--green); border-color: var(--green); }
+    .price-card h4 { font-family: 'Manrope', sans-serif; font-size: 1rem; font-weight: 700; color: var(--green); margin-bottom: 8px; }
+    .price-card.featured h4 { color: var(--gold); }
+    .price-tag { font-family: 'Manrope', sans-serif; font-size: 2.6rem; font-weight: 800; color: var(--green); line-height: 1; margin-bottom: 4px; }
+    .price-card.featured .price-tag { color: var(--gold); }
+    .price-tag sup { font-size: 1.3rem; vertical-align: top; margin-top: 6px; }
+    .price-sub { font-size: .8rem; color: var(--muted); margin-bottom: 18px; font-family: 'Manrope', sans-serif; }
+    .price-card.featured .price-sub { color: rgba(255,255,255,.6); }
+    .price-card ul { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; }
+    .price-card ul li { font-size: .88rem; color: var(--muted); padding-left: 20px; position: relative; line-height: 1.5; }
+    .price-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--gold-dark); font-weight: 700; }
+    .price-card.featured ul li { color: rgba(255,255,255,.78); }
+    .price-card.featured ul li::before { color: var(--gold); }
+    .price-inquire { display: inline-block; padding: 12px 26px; border-radius: 5px; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: .88rem; text-decoration: none; transition: background .2s, color .2s; letter-spacing: .03em; border: 1.5px solid var(--green); color: var(--green); background: transparent; }
+    .price-inquire:hover { background: var(--green); color: #fff; }
+    .price-card.featured .price-inquire { border-color: var(--gold); color: var(--gold); }
+    .price-card.featured .price-inquire:hover { background: var(--gold); color: var(--green); }
+
+    /* ── INQUIRY FORM ── */
+    .form-section { background: #fff; }
+    .form-wrap { background: var(--green); border-radius: 16px; padding: 52px 48px; max-width: 680px; margin: 0 auto; }
+    @media(max-width: 600px) { .form-wrap { padding: 36px 24px; } }
+    .form-wrap .eyebrow { color: var(--gold-dark); }
+    .form-wrap .headline { color: var(--gold); margin-bottom: 8px; }
+    .form-wrap .section-intro { color: rgba(255,255,255,.7); margin-bottom: 36px; font-size: .95rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media(max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+    .form-group label { font-family: 'Manrope', sans-serif; font-size: .8rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: rgba(255,255,255,.65); }
+    .form-group input, .form-group select, .form-group textarea {
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2);
+      border-radius: 6px; padding: 12px 16px; font-family: 'Poppins', sans-serif;
+      font-size: .92rem; color: #fff; outline: none; transition: border-color .2s;
+      -webkit-appearance: none;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,.35); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+    .form-group select option { background: var(--green); color: #fff; }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit { width: 100%; background: var(--gold); color: var(--green); border: none; padding: 16px; border-radius: 6px; font-family: 'Manrope', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; letter-spacing: .04em; transition: background .2s; }
+    .form-submit:hover { background: var(--gold-dark); }
+    .form-note { font-size: .8rem; color: rgba(255,255,255,.5); text-align: center; margin-top: 14px; line-height: 1.6; }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--cream); }
+    .faq-list { display: flex; flex-direction: column; gap: 16px; max-width: 720px; }
+    .faq-item { background: #fff; border: 1.5px solid var(--border); border-radius: 10px; padding: 24px 28px; }
+    .faq-item h5 { font-family: 'Manrope', sans-serif; font-size: .98rem; font-weight: 700; color: var(--green); margin-bottom: 8px; }
+    .faq-item p { font-size: .9rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--green); padding: 36px 40px; text-align: center; }
+    footer p { color: rgba(255,255,255,.55); font-size: .85rem; margin-bottom: 6px; }
+    footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://www.hopecotefarm.com" class="nav-brand">Hopecote Farm <span>· Springfield, TN</span></a>
+  <a href="#inquire" class="nav-cta">Inquire About Your Event →</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Farm Events & Weddings</div>
+  <h1>Your Most <em>Unforgettable</em> Day.<br>On 35 Acres of Tennessee Farm.</h1>
+  <p class="hero-sub">Micro-weddings, elopements, celebrations, and private events on the open pasture of Hopecote Farm — 45 minutes from Nashville.</p>
+  <p class="hero-details">Any Day of the Week · Up to 50 Guests · Springfield, Tennessee</p>
+  <div class="hero-btns">
+    <a href="#inquire" class="btn-gold">Inquire About Your Date →</a>
+    <a href="#venue" class="btn-ghost">See the Space</a>
+  </div>
+</div>
+
+<!-- PROMISE BAR -->
+<div class="promise-bar">
+  <div class="promise-item"><span class="promise-icon">🌾</span><span>35 Open Acres</span></div>
+  <div class="promise-item"><span class="promise-icon">🕊</span><span>Private & Exclusive</span></div>
+  <div class="promise-item"><span class="promise-icon">🚗</span><span>45 Min from Nashville</span></div>
+  <div class="promise-item"><span class="promise-icon">🐾</span><span>Working Farm Backdrop</span></div>
+  <div class="promise-item"><span class="promise-icon">📅</span><span>Any Day Available</span></div>
+</div>
+
+<!-- EVENT TYPES -->
+<section id="events">
+  <div class="container">
+    <div class="events-statement">
+      <span class="eyebrow">What We Host</span>
+      <h2 class="events-statement-title">Every Occasion Deserves<br>a Backdrop <em>Worth Remembering.</em></h2>
+      <div class="events-divider"><span></span>🌾<span></span></div>
+      <p>Whether you're saying "I do" in front of 20 people or gathering your team on open Tennessee farmland, Hopecote is a setting that does the work before the first guest arrives.</p>
+    </div>
+    <div class="event-grid">
+      <div class="event-card">
+        <img class="event-card-img" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=450&fit=crop&auto=format" alt="Micro-Wedding" loading="lazy" />
+        <div class="event-card-overlay">
+          <h4>Micro-Weddings</h4>
+          <p>Intimate ceremonies of 10–50 guests on the open pasture. Rolling Tennessee farmland, natural light, and the real thing.</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <img class="event-card-img" src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=600&h=450&fit=crop&auto=format" alt="Elopement" loading="lazy" />
+        <div class="event-card-overlay">
+          <h4>Elopements</h4>
+          <p>Just the two of you and whoever matters most — a quiet, private slice of 35 acres for something meaningful over something big.</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <img class="event-card-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=450&fit=crop&auto=format" alt="Rehearsal Dinner" loading="lazy" />
+        <div class="event-card-overlay">
+          <h4>Rehearsal Dinners</h4>
+          <p>The night before the big day on the farm. Open pasture, Tennessee sky, and a backdrop your guests will talk about for years.</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <img class="event-card-img" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=450&fit=crop&auto=format" alt="Milestone Celebration" loading="lazy" />
+        <div class="event-card-overlay">
+          <h4>Milestone Celebrations</h4>
+          <p>Birthdays, anniversaries, retirements, graduations. If it deserves celebrating, it deserves somewhere you'll never forget.</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <img class="event-card-img" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&h=450&fit=crop&auto=format" alt="Bridal and Baby Showers" loading="lazy" />
+        <div class="event-card-overlay">
+          <h4>Bridal & Baby Showers</h4>
+          <p>Garden-party vibes on a working farm. Rustic, warm, entirely your own — with space to breathe and celebrate without feeling rushed.</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <img class="event-card-img" src="images/hammock_cornfield.jpg" alt="Corporate Retreat" loading="lazy" />
+        <div class="event-card-overlay">
+          <h4>Corporate Retreats</h4>
+          <p>Fresh air, open land, and space to reconnect. A true off-site that helps your team slow down, reset, and show up differently.</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <img class="event-card-img" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=450&fit=crop&auto=format" alt="Yoga and Sound Bath" loading="lazy" />
+        <div class="event-card-overlay">
+          <h4>Yoga, Sound Bath & Coaching</h4>
+          <p>A grounding, distraction-free setting for wellness events, group coaching, and sound healing — indoors or on the open pasture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included-section">
+  <div class="container">
+    <p class="eyebrow">Every Event Includes</p>
+    <h2 class="headline">The Farm. The Space. The Experience.</h2>
+    <p class="section-intro">Every event at Hopecote comes with exclusive access to the pasture, a dedicated host, and everything that makes this farm feel like nowhere else.</p>
+    <div class="included-grid">
+      <div class="included-item">
+        <span class="ii-icon">🌾</span>
+        <div class="ii-text">
+          <h5>Exclusive Pasture Access</h5>
+          <p>The event space is yours and yours alone for the full event window. No shared spaces, no strangers in the background.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <span class="ii-icon">🏡</span>
+        <div class="ii-text">
+          <h5>Indoor + Outdoor Flexibility</h5>
+          <p>Ceremony on the open pasture, gathering in the barn-adjacent space. Rain or shine, we have options to keep your event flowing.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <span class="ii-icon">🚻</span>
+        <div class="ii-text">
+          <h5>Restroom Facilities</h5>
+          <p>Upscale portable restroom units are available for all events, ensuring your guests are comfortable throughout.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <span class="ii-icon">🅿️</span>
+        <div class="ii-text">
+          <h5>On-Site Parking</h5>
+          <p>Ample open parking on the property. Easy in, easy out — no shuttles, no stress for your guests.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <span class="ii-icon">🐔</span>
+        <div class="ii-text">
+          <h5>The Farm Itself</h5>
+          <p>Chickens, open fields, the sounds of real Tennessee farmland. The backdrop doesn't need decorating — it just needs to be experienced.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <span class="ii-icon">👋</span>
+        <div class="ii-text">
+          <h5>On-Site Host</h5>
+          <p>Amy or Isaac will be on property throughout your event to ensure everything runs smoothly from start to finish.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section class="venue-section" id="venue">
+  <div class="container">
+    <div class="venue-two-col">
+      <div>
+        <p class="eyebrow">The Setting</p>
+        <h2 class="headline">35 Acres. Open Pasture. Real Tennessee Farm.</h2>
+        <p style="color:var(--muted);font-size:.97rem;line-height:1.75;margin-bottom:28px;">Hopecote Farm sits on 35 rolling acres just 45 minutes outside of Nashville in Springfield, Tennessee. The event pasture is flat, accessible, and completely open — a natural canvas for ceremonies, dinners, and celebrations that need space to breathe.</p>
+        <div class="venue-details">
+          <div class="venue-detail">
+            <div class="vd-icon">📍</div>
+            <div class="vd-text">
+              <h6>Location</h6>
+              <p>Springfield, Tennessee — 45 minutes north of Nashville, 40 minutes from Clarksville</p>
+            </div>
+          </div>
+          <div class="venue-detail">
+            <div class="vd-icon">👥</div>
+            <div class="vd-text">
+              <h6>Capacity</h6>
+              <p>Up to 50 guests for outdoor pasture events. Indoor large event room available for seated gatherings — ideal for inclement weather or evening receptions.</p>
+            </div>
+          </div>
+          <div class="venue-detail">
+            <div class="vd-icon">📅</div>
+            <div class="vd-text">
+              <h6>Availability</h6>
+              <p>Both the outdoor pasture and indoor event room are available any day of the week. All events end by 10 PM. Dates book quickly — inquire early.</p>
+            </div>
+          </div>
+          <div class="venue-detail">
+            <div class="vd-icon">🍽️</div>
+            <div class="vd-text">
+              <h6>Catering</h6>
+              <p>Bring your own caterer or food truck. We have partnerships with local vendors we're happy to recommend.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="venue-img">
+        <img src="images/hero_driveway.jpg" alt="Hopecote Farm tree-lined driveway" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="container">
+    <p class="eyebrow">Investment</p>
+    <h2 class="headline">Simple, Transparent Pricing.</h2>
+    <p class="section-intro">Every event is custom — inquire to confirm your date and receive a full quote. All packages include exclusive access to your chosen space, an on-site host, and restroom facilities.</p>
+    <div class="pricing-note">
+      <strong>📋 What's not included — so you know upfront:</strong>
+      Catering, flowers, decor, tables, chairs, lighting, and additional vendor fees are the responsibility of the event host. We provide the space, the host, and the facilities. No hidden fees.
+    </div>
+
+    <!-- OUTDOOR PASTURE -->
+    <h3 style="font-family:'Manrope',sans-serif;font-size:1.1rem;font-weight:700;color:var(--sage);letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px;">🌾 Outdoor Pasture Events <span style="font-weight:400;font-size:.9rem;color:var(--muted);text-transform:none;letter-spacing:0;">· Any Day · Up to 50 Guests</span></h3>
+    <div class="pricing-grid" style="margin-bottom:48px;">
+      <div class="price-card">
+        <h4>Elopement</h4>
+        <div class="price-tag"><sup>$</sup>500</div>
+        <div class="price-sub">up to 20 guests · 3-hour window</div>
+        <ul>
+          <li>Exclusive pasture access</li>
+          <li>On-site host</li>
+          <li>Restroom facilities</li>
+          <li>Parking for all guests</li>
+          <li>Perfect for intimate ceremonies</li>
+        </ul>
+        <a href="#inquire" class="price-inquire">Inquire About This Date →</a>
+      </div>
+      <div class="price-card featured">
+        <h4>Micro-Wedding / Celebration</h4>
+        <div class="price-tag"><sup>$</sup>1,500</div>
+        <div class="price-sub">up to 50 guests · 5-hour window</div>
+        <ul>
+          <li>Exclusive pasture access</li>
+          <li>On-site host</li>
+          <li>Restroom facilities</li>
+          <li>Parking for all guests</li>
+          <li>Indoor overflow space</li>
+          <li>Most popular option</li>
+        </ul>
+        <a href="#inquire" class="price-inquire">Inquire About This Date →</a>
+      </div>
+      <div class="price-card">
+        <h4>Full Farm Event</h4>
+        <div class="price-tag"><sup>$</sup>2,500</div>
+        <div class="price-sub">up to 50 guests · full-day · ends by 10 PM</div>
+        <ul>
+          <li>Exclusive pasture access</li>
+          <li>On-site host</li>
+          <li>Restroom facilities</li>
+          <li>Parking for all guests</li>
+          <li>Indoor overflow space</li>
+          <li>Morning setup access included</li>
+        </ul>
+        <a href="#inquire" class="price-inquire">Inquire About This Date →</a>
+      </div>
+    </div>
+
+    <!-- WELLNESS / COACHING -->
+    <h3 style="font-family:'Manrope',sans-serif;font-size:1.1rem;font-weight:700;color:var(--sage);letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px;">🧘 Yoga · Sound Bath · Coaching <span style="font-weight:400;font-size:.9rem;color:var(--muted);text-transform:none;letter-spacing:0;">· Any Day · Small Groups</span></h3>
+    <div style="background:var(--green-pale);border-left:4px solid var(--gold-dark);padding:18px 22px;border-radius:6px;font-size:.9rem;color:var(--green);margin-bottom:24px;line-height:1.7;">
+      <strong>Perfect for facilitators & coaches:</strong> Rent the farm as your venue for group yoga classes, sound healing sessions, breathwork, or coaching intensives. Use the open pasture for outdoor sessions or the indoor space for intimate indoor experiences. Ideal for groups of 5–25.
+    </div>
+    <div class="pricing-grid" style="grid-template-columns:repeat(3,1fr);max-width:960px;margin-bottom:48px;">
+      <div class="price-card">
+        <h4>Half-Day Session</h4>
+        <div class="price-tag"><sup>$</sup>350</div>
+        <div class="price-sub">up to 4 hours · any day</div>
+        <ul>
+          <li>Indoor or outdoor space</li>
+          <li>Up to 25 participants</li>
+          <li>On-site host available</li>
+          <li>Parking included</li>
+          <li>Great for single workshops</li>
+        </ul>
+        <a href="#inquire" class="price-inquire">Inquire About This Date →</a>
+      </div>
+      <div class="price-card featured">
+        <h4>Full-Day Retreat</h4>
+        <div class="price-tag"><sup>$</sup>650</div>
+        <div class="price-sub">up to 8 hours · any day</div>
+        <ul>
+          <li>Indoor + outdoor space</li>
+          <li>Up to 25 participants</li>
+          <li>On-site host available</li>
+          <li>Parking included</li>
+          <li>Add massage services available</li>
+          <li>Most popular for day retreats</li>
+        </ul>
+        <a href="#inquire" class="price-inquire">Inquire About This Date →</a>
+      </div>
+      <div class="price-card">
+        <h4>Recurring Booking</h4>
+        <div class="price-tag" style="font-size:2rem;">Ask Us</div>
+        <div class="price-sub">weekly or monthly · custom rate</div>
+        <ul>
+          <li>Discounted recurring rate</li>
+          <li>Priority date holds</li>
+          <li>Indoor or outdoor space</li>
+          <li>Up to 25 participants</li>
+          <li>Ideal for yoga instructors & coaches</li>
+        </ul>
+        <a href="#inquire" class="price-inquire">Inquire About This Date →</a>
+      </div>
+    </div>
+
+    <!-- INDOOR EVENT ROOM -->
+    <h3 style="font-family:'Manrope',sans-serif;font-size:1.1rem;font-weight:700;color:var(--sage);letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px;">🏛️ Large Indoor Event Room <span style="font-weight:400;font-size:.9rem;color:var(--muted);text-transform:none;letter-spacing:0;">· Any Day · Seated Gatherings</span></h3>
+    <div style="background:var(--green-pale);border-left:4px solid var(--gold-dark);padding:18px 22px;border-radius:6px;font-size:.9rem;color:var(--green);margin-bottom:24px;line-height:1.7;">
+      <strong>About this space:</strong> Our large indoor room is a beautiful option for seated dinners, receptions, showers, or any event that benefits from an enclosed space. Please note that booking this room takes it exclusively — it does share walls with our wellness suites, which will not be in operation during your event.
+    </div>
+    <div class="pricing-grid" style="grid-template-columns:1fr 1fr;max-width:660px;">
+      <div class="price-card">
+        <h4>Weekday Rate</h4>
+        <div class="price-tag"><sup>$</sup>2,500</div>
+        <div class="price-sub">Thursday or Friday · full-day access</div>
+        <ul>
+          <li>Exclusive indoor event room</li>
+          <li>On-site host</li>
+          <li>Restroom facilities</li>
+          <li>On-site parking</li>
+          <li>Access from 9 AM – 10 PM</li>
+        </ul>
+        <a href="#inquire" class="price-inquire">Inquire About This Date →</a>
+      </div>
+      <div class="price-card featured">
+        <h4>Weekend Rate</h4>
+        <div class="price-tag"><sup>$</sup>4,000</div>
+        <div class="price-sub">Saturday or Sunday · full-day access</div>
+        <ul>
+          <li>Exclusive indoor event room</li>
+          <li>On-site host</li>
+          <li>Restroom facilities</li>
+          <li>On-site parking</li>
+          <li>Access from 9 AM – 10 PM</li>
+          <li>Pasture access included</li>
+        </ul>
+        <a href="#inquire" class="price-inquire">Inquire About This Date →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INQUIRY FORM -->
+<section class="form-section" id="inquire">
+  <div class="container">
+    <div class="form-wrap">
+      <p class="eyebrow">Let's Talk</p>
+      <h2 class="headline">Tell Us About Your Event.</h2>
+      <p class="section-intro">We respond to all inquiries within 48 hours. For urgent questions, reach us directly at hello@inherelement.co</p>
+      <form name="event-inquiry" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
+      <input type="hidden" name="form-name" value="event-inquiry" />
+      <input type="hidden" name="subject" value="New Event Inquiry — Hopecote Farm" />
+      <p style="display:none;"><input name="bot-field" /></p>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="First & Last Name" />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@email.com" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(615) 000-0000" />
+        </div>
+        <div class="form-group">
+          <label>Event Type</label>
+          <select>
+            <option value="" disabled selected>Select event type</option>
+            <option>Micro-Wedding</option>
+            <option>Elopement</option>
+            <option>Rehearsal Dinner</option>
+            <option>Bridal Shower</option>
+            <option>Baby Shower</option>
+            <option>Milestone Birthday</option>
+            <option>Anniversary</option>
+            <option>Corporate Event</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Preferred Date</label>
+          <input type="date" />
+        </div>
+        <div class="form-group">
+          <label>Guest Count</label>
+          <select>
+            <option value="" disabled selected>Estimated guests</option>
+            <option>Under 20</option>
+            <option>20–35</option>
+            <option>35–50</option>
+            <option>50–75</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Tell us about your vision</label>
+        <textarea placeholder="Share any details about your event — style, timing, what matters most to you..."></textarea>
+      </div>
+      <button class="form-submit" type="submit">Send My Inquiry →</button>
+      </form>
+      <p class="form-note">We'll follow up within 48 hours to confirm availability and share next steps. Dates are not held until a deposit is received.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Netlify Forms success page -->
+<div id="form-success" style="display:none;text-align:center;padding:60px 24px;">
+  <p style="font-size:2rem;">🌾</p>
+  <h3 style="font-family:'Manrope',sans-serif;color:var(--green);font-size:1.5rem;margin-bottom:12px;">We got your inquiry!</h3>
+  <p style="color:var(--muted);">We'll be in touch within 48 hours to confirm availability.</p>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <p class="eyebrow">Common Questions</p>
+    <h2 class="headline">Good Questions.<br>Straight Answers.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h5>Do you allow outside vendors?</h5>
+        <p>Yes — bring your own caterer, photographer, florist, and DJ. We have a list of local vendors we love and are happy to share recommendations if you need them.</p>
+      </div>
+      <div class="faq-item">
+        <h5>What happens if it rains?</h5>
+        <p>We've got you covered — literally. We have an outdoor event tent available for rain protection, plus indoor overflow space adjacent to the pasture. We'll work with you in advance on a rain plan so your event stays on track no matter the weather.</p>
+      </div>
+      <div class="faq-item">
+        <h5>Are the farm animals part of the event?</h5>
+        <p>Our chickens and pigs are on the property and can be part of the experience if you'd like — or we can keep them in their areas so they stay out of your event space. Your call.</p>
+      </div>
+      <div class="faq-item">
+        <h5>How far in advance should I book?</h5>
+        <p>We recommend inquiring at least 3–6 months ahead for weddings and large events. Smaller celebrations can sometimes be arranged with less lead time — just ask.</p>
+      </div>
+      <div class="faq-item">
+        <h5>Is a deposit required?</h5>
+        <p>Yes. A 50% deposit is required to hold your date. The remaining balance is due 30 days before your event. Deposits are non-refundable but dates can be moved with 60 days notice.</p>
+      </div>
+      <div class="faq-item">
+        <h5>Can I host a yoga class or sound bath here regularly?</h5>
+        <p>Yes — we offer a discounted recurring rate for yoga instructors, coaches, and facilitators who want to use the farm on a weekly or monthly basis. Reach out through the inquiry form and let us know your cadence and we'll put together a custom arrangement.</p>
+      </div>
+      <div class="faq-item">
+        <h5>Are events only on weekends?</h5>
+        <p>Not at all — both our outdoor pasture and large indoor event room are available any day of the week. Whether you're planning a weekday rehearsal dinner or a Sunday celebration, we can accommodate you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Hopecote Farm · Springfield, Tennessee · <a href="https://www.hopecotefarm.com">hopecotefarm.com</a></p>
+  <p style="margin-top:6px;">Questions? Email us at <a href="mailto:hello@inherelement.co">hello@inherelement.co</a></p>
+</footer>
+
+</body>
+</html>
